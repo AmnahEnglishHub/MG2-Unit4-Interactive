@@ -1,12 +1,4 @@
-مشروع Mega Goal 2 Unit 4 — حزمة غير منشورة وغير مختبرة مع Firebase الحي.
-index.html = الطالبات | teacher.html = المعلمة | admin.html = الإدارة.
-الصفحات الأصلية التسع موجودة في assets.
-قبل استخدام بيانات حقيقية:
-1) في Firebase Authentication أنشئي حساب Email/Password للمعلمة وحساباً منفصلاً للإدارة.
-2) احصلي على UID لكل حساب من Authentication > Users.
-3) استبدلي REPLACE_TEACHER_UID و REPLACE_ADMIN_UID في firestore.rules ثم انشري القواعد في Firestore Rules.
-4) ارفعي محتويات مجلد Unit4_Project إلى GitHub Pages مع بقاء الملفات في الجذر.
-5) اختبري تسليمًا تجريبيًا واحدًا، ثم دخول المعلمة والإدارة، والتحقق من رفض دخول حساب غير مصرح له.
-تنبيه مهم: منع التكرار في النسخة الحالية هو لكل جلسة تسجيل مجهولة فقط، وليس لكل طالبة حقيقية. قد تعيد الطالبة التسليم من متصفح آخر. يلزم هوية طالبة موثقة/رمز فردي آمن قبل الاعتماد الرسمي.
-الدرجات الموضوعية فقط آلية؛ الكتابة تتطلب مراجعة بشرية. الإدارة قراءة فقط.
-لا تنشري بيانات طالبات حقيقية قبل الاختبار الأمني.
+Mega Goal 2 Unit 4 - 48 objective answers.
+index.html: student | teacher.html: teacher | admin.html: admin.
+Firebase Hosting configuration included.
+IMPORTANT: NOT live-tested. Before publishing real student data, create separate teacher/admin Email-Password users and replace UID placeholders in firestore.rules, publish rules, and test authorized/unauthorized access. Anonymous sign-in does not ensure one submission per actual student. Scores are computed in browser and are not tamper-proof. Do not treat this as a secure official grading system without server-side validation.
