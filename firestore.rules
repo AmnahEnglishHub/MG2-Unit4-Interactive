@@ -1,0 +1,20 @@
+rules_version = '2';
+service cloud.firestore {
+ match /databases/{database}/documents {
+  function teacher() { return request.auth != null && request.auth.uid == 'REPLACE_TEACHER_UID'; }
+  function admin() { return request.auth != null && request.auth.uid == 'REPLACE_ADMIN_UID'; }
+  match /submissions/{id} {
+   allow read: if teacher() || admin();
+   allow create: if request.auth != null && request.auth.token.firebase.sign_in_provider == 'anonymous'
+     && request.auth.uid == id && request.resource.data.ownerUid == id
+     && request.resource.data.student is string && request.resource.data.student.size() >= 3
+     && request.resource.data.student.size() <= 120
+     && request.resource.data.cls in ['ثاني عام 4','ثاني عام 5']
+     && request.resource.data.score is int && request.resource.data.score >= 0
+     && request.resource.data.total == 48
+     && request.resource.data.createdAt == request.time;
+   allow update, delete: if false;
+  }
+  match /{document=**} { allow read, write: if false; }
+ }
+}

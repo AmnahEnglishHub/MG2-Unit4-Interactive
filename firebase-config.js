@@ -1,0 +1,1 @@
+export const firebaseConfig = {apiKey:"AIzaSyCwjmfkdydDRGauA5oZ53IJu2lXTBKR5VY",authDomain:"mg2-unit4-interactive.firebaseapp.com",projectId:"mg2-unit4-interactive",storageBucket:"mg2-unit4-interactive.firebasestorage.app",messagingSenderId:"570183792813",appId:"1:570183792813:web:1bd550e01c535aac8c2e24"};
