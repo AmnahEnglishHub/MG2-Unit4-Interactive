@@ -11,6 +11,5 @@ function render(){const f=$('filter').value;const filtered=data.filter(x=>!f||x.
 
 ')||'لا توجد كتابة';};td.append(b);tr.append(td);tbody.append(tr)}}
 $('filter').onchange=render;
-$('export').onclick=()=>{const f=$('filter').value;const rows=[['Student','Class','Score','Total','Date'],...data.filter(x=>!f||x.cls===f).map(x=>[x.student,x.cls,x.score,x.total,x.date])];const csv='﻿'+rows.map(r=>r.map(v=>'"'+String(v??'').replaceAll('"','""')+'"').join(',')).join('
-');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));a.download='unit4-results.csv';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};
+$('export').onclick=()=>{const f=$('filter').value;const rows=[['Student','Class','Score','Total','Date'],...data.filter(x=>!f||x.cls===f).map(x=>[x.student,x.cls,x.score,x.total,x.date])];const csv='﻿'+rows.map(r=>r.map(v=>'"'+String(v??'').replaceAll('"','""')+'"').join(',')).join('\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));a.download='unit4-results.csv';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};
 </script></body></html>
